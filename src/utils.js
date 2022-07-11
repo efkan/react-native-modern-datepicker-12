@@ -77,13 +77,13 @@ class utils {
     return {flexDirection: this.data.reverse ? (I18nManager.isRTL ? 'row' : 'row-reverse') : 'row'};
   }
 
-  getFormated = (date, formatName = 'selectedFormat') => date.format(this.config[formatName]);
+  getFormatted = (date, formatName = 'selectedFormat') => date.format(this.config[formatName]);
 
-  getFormatedDate = (date = new Date(), format = 'YYYY/MM/DD') => moment(date).format(format);
+  getFormattedDate = (date = new Date(), format = 'YYYY-MM-DD') => moment(date).format(format);
 
   getTime = (time) => this.getDate(time).format(this.config.timeFormat);
 
-  getToday = () => this.getFormated(m, 'dateFormat');
+  getToday = () => this.getFormatted(m, 'dateFormat');
 
   getMonthName = (month) => this.config.monthNames[month];
 
@@ -130,7 +130,7 @@ class utils {
     const {isGregorian} = this.data;
     const date = this.getDate(time);
     return this.checkMonthDisabled(
-      this.getFormated(date.add(next ? -1 : 1, isGregorian ? 'month' : 'jMonth')),
+      this.getFormatted(date.add(next ? -1 : 1, isGregorian ? 'month' : 'jMonth')),
     );
   };
 
@@ -146,13 +146,13 @@ class utils {
     const {isGregorian} = this.data;
     const date = this.getDate(time);
     const dateWithNewMonth = isGregorian ? date.month(month) : date.jMonth(month);
-    return this.checkMonthDisabled(this.getFormated(dateWithNewMonth));
+    return this.checkMonthDisabled(this.getFormatted(dateWithNewMonth));
   };
 
   validYear = (time, year) => {
     const {minimumDate, maximumDate, isGregorian} = this.data;
     const date = isGregorian ? this.getDate(time).year(year) : this.getDate(time).jYear(year);
-    let validDate = this.getFormated(date);
+    let validDate = this.getFormatted(date);
     if (minimumDate && date < this.getDate(minimumDate)) {
       validDate = minimumDate;
     }
@@ -186,7 +186,7 @@ class utils {
         return {
           dayString: this.toPersianNumber(n + 1),
           day: n + 1,
-          date: this.getFormated(isGregorian ? date.date(n + 1) : date.jDate(n + 1)),
+          date: this.getFormatted(isGregorian ? date.date(n + 1) : date.jDate(n + 1)),
           disabled,
         };
       }),
