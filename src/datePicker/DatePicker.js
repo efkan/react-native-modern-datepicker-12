@@ -51,7 +51,7 @@ const DatePicker = props => {
     state: useReducer(reducer, {
       activeDate: props.current || calendarUtils.getToday(),
       selectedDate: props.selected
-        ? calendarUtils.getFormated(calendarUtils.getDate(props.selected))
+        ? calendarUtils.getFormatted(calendarUtils.getDate(props.selected))
         : '',
       monthOpen: props.mode === 'monthYear',
       timeOpen: props.mode === 'time',

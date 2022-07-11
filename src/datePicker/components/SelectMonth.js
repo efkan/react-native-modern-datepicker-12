@@ -59,9 +59,9 @@ const SelectMonth = () => {
         month !== null ? (isGregorian ? date.month(month) : date.jMonth(month)) : date;
       setMainState({
         type: 'set',
-        activeDate: utils.getFormated(activeDate),
+        activeDate: utils.getFormatted(activeDate),
       });
-      month !== null && onMonthYearChange(utils.getFormated(activeDate, 'monthYearFormat'));
+      month !== null && onMonthYearChange(utils.getFormatted(activeDate, 'monthYearFormat'));
       month !== null &&
         mode !== 'monthYear' &&
         setMainState({

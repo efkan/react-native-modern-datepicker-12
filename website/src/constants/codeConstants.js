@@ -25,7 +25,7 @@ const BasicUsage = () => {
 `;
 export const JALAAI_EXAMPLE_CODE = `
 import React from 'react';
-import DatePicker, { getFormatedDate } from 'react-native-modern-datepicker';
+import DatePicker, { getFormattedDate } from 'react-native-modern-datepicker';
 
 const JalaaliExample = () => {
   return (
@@ -35,7 +35,7 @@ const JalaaliExample = () => {
         defaultFont: 'Shabnam-Light',
         headerFont: 'Shabnam-Medium',
       }}
-      selected={getFormatedDate(new Date(), 'jYYYY/jMM/jDD')}
+      selected={getFormattedDate(new Date(), 'jYYYY/jMM/jDD')}
     />
   );
 };
@@ -116,11 +116,11 @@ const FullUsageExample = () => {
 `;
 
 export const UTILS_CODE = `
-import { getToday, getFormatedDate } from 'react-native-modern-datepicker';
+import { getToday, getFormattedDate } from 'react-native-modern-datepicker';
 
 getToday(); // returns today's date.. e.g: 2019/10/12
 //Get formatted date from Date object or date string "2019/..."
-getFormatedDate(new Date(), "YYYY/MM/DD h:m"); 
-getFormatedDate(timestamp, "jYYYY/jMM/jDD h:m"); //for jalaali
+getFormattedDate(new Date(), "YYYY/MM/DD h:m"); 
+getFormattedDate(timestamp, "jYYYY/jMM/jDD h:m"); //for jalaali
 
 `;

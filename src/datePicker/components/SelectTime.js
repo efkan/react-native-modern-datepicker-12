@@ -153,9 +153,9 @@ const SelectTime = () => {
     newTime.hour(time.hour).minute(time.minute);
     setMainState({
       type: 'set',
-      activeDate: utils.getFormated(newTime),
+      activeDate: utils.getFormatted(newTime),
       selectedDate: mainState.selectedDate
-        ? utils.getFormated(
+        ? utils.getFormatted(
             utils
               .getDate(mainState.selectedDate)
               .hour(time.hour)
@@ -163,7 +163,7 @@ const SelectTime = () => {
           )
         : '',
     });
-    onTimeChange(utils.getFormated(newTime, 'timeFormat'));
+    onTimeChange(utils.getFormatted(newTime, 'timeFormat'));
     mode !== 'time' &&
       setMainState({
         type: 'toggleTime',

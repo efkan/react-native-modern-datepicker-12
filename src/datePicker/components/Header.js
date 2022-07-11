@@ -40,7 +40,7 @@ const Header = ({changeMonth}) => {
       .add(modificationNumber, isGregorian ? 'month' : 'jMonth');
     setMainState({
       type: 'set',
-      activeDate: utils.getFormated(newDate),
+      activeDate: utils.getFormatted(newDate),
     });
     changeMonth(type);
   };
