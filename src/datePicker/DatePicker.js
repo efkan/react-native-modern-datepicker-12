@@ -56,6 +56,7 @@ const DatePicker = props => {
       monthOpen: props.mode === 'monthYear',
       timeOpen: props.mode === 'time',
       is12Hour: Boolean(props.is12Hour),
+      isYearEditable: Boolean(props.isYearEditable),
     }),
   };
   const [minHeight, setMinHeight] = useState(300);

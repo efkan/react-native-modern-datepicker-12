@@ -130,6 +130,7 @@ const SelectMonth = () => {
           blurOnSubmit
           selectionColor={options.mainColor}
           onChangeText={onChangeYear}
+          editable={mainState.isYearEditable}
         />
         <TouchableOpacity
           activeOpacity={0.7}
