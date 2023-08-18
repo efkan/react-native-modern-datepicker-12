@@ -75,11 +75,11 @@ const SelectMonth = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevDisable, nextDisable]);
 
-  const onChangeYear = text => {
-    if (Number(utils.toEnglish(text))) {
-      setYear(utils.toPersianNumber(text));
-    }
-  };
+const onChangeYear = text => {
+    if (text === "" || Number(utils.toEnglish(text))) {
+      setYear(utils.toPersianNumber(text));
+    }
+  };
 
   const onSelectYear = number => {
     let y = Number(utils.toEnglish(year)) + number;
