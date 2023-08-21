@@ -76,8 +76,8 @@ const TimeScroller = ({title, data, onChange, isHour}) => {
         <Text style={style.listItemText}>
           {(isHour && is12Hour)
             ? item
-            : utils.toPersianNumber(String(item).length === 1 
-              ? '0' + item 
+            : utils.toPersianNumber(String(item).length === 1
+              ? '0' + item
               : item)
           }
         </Text>
@@ -212,11 +212,13 @@ const SelectTime = () => {
         data={Array.from({length: 60 / minuteInterval}, (x, i) => i * minuteInterval)}
         onChange={minute => setTime({...time, minute})}
       />
-      <TimeScroller
-        title={utils.config.meridiem}
-        data={['AM', 'PM']}
-        onChange={handleMeridiemChange}
-      />
+      {is12Hour && (
+        <TimeScroller
+          title={utils.config.meridiem}
+          data={['AM', 'PM']}
+          onChange={handleMeridiemChange}
+        />
+      )}
       <View style={style.footer}>
         <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={selectTime}>
           <Text style={style.btnText}>{utils.config.timeSelect}</Text>

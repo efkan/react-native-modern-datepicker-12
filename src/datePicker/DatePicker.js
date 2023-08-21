@@ -87,11 +87,20 @@ const DatePicker = props => {
     }
   };
 
+  const timeIn24HMode = contextValue.mode === 'time' && Boolean(props.is12Hour) === false;
+
   return (
     <CalendarContext.Provider value={contextValue}>
       <View
         style={[style.container, {minHeight}, props.style]}
-        onLayout={({nativeEvent}) => setMinHeight(nativeEvent.layout.width * 0.9 + 55)}>
+        onLayout={({nativeEvent}) =>
+          setMinHeight(
+            timeIn24HMode
+              ? (nativeEvent.layout.width * 0.6 + 75)
+              : (nativeEvent.layout.width * 0.9 + 55)
+          )
+        }
+      >
         {renderBody()}
       </View>
     </CalendarContext.Provider>
